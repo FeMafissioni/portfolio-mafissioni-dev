@@ -13,7 +13,6 @@ import {
   Languages,
   Linkedin,
   Mail,
-  MapPin,
   Menu,
   X,
 } from "lucide-react";
@@ -40,8 +39,6 @@ import { GrOracle } from "react-icons/gr";
 import { Button } from "./components/ui/button";
 import { Card, CardDescription, CardTitle } from "./components/ui/card";
 import { Badge } from "./components/ui/badge";
-import { Input } from "./components/ui/input";
-import { Textarea } from "./components/ui/textarea";
 import { SectionHeader } from "./components/ui/section-header";
 
 const resumeFiles = {
@@ -54,8 +51,6 @@ const resumeFiles = {
     download: "Felipe_Curriculum_ATS_MAR2026_PT.pdf",
   },
 };
-
-const contactFormEndpoint = "https://formsubmit.co/ajax/32b891c9c489b0852b0ac8e64ee96a6d";
 
 const marketPlatformGallery = {
   en: [
@@ -222,8 +217,7 @@ const translations = {
               "The workflow became faster and more consistent, with clearer visibility of progression trends. The bot is available on Telegram as Gym Assist Bot (@GymAiMafissioniBot).",
           },
           tags: ["Node.js", "TypeScript", "Telegram Bot API", "PostgreSQL", "Railway", "ChatGPT API"],
-          githubUrl:
-            "https://github.com/search?q=user%3AFeMafissioni+gym+assist+bot&type=repositories",
+          githubUrl: "https://github.com/FeMafissioni/gym-ai-assistant",
         },
         {
           slug: "market-price-platform",
@@ -321,7 +315,7 @@ const translations = {
           period: "2023",
         },
         {
-          title: "Azure Pipelines CI/CD, Docker, and Kubernetes in Azure DevOps",
+          title: "Azure Pipelines - CI/CD, Docker and Kubernetes in Azure DevOps",
           institution: "Azure DevOps",
           period: "Current",
         },
@@ -376,17 +370,9 @@ const translations = {
       eyebrow: "Contact",
       title: "Let's connect",
       subtitle:
-        "Open to software engineering opportunities, collaboration, and technical discussions. Send me a message :)",
+        "Open to software engineering opportunities, collaboration, and technical discussions.",
       intro:
         "If your team is looking for a Software Engineer with practical full-stack and QA experience, I would be happy to discuss how I can contribute.",
-      nameLabel: "Name",
-      emailLabel: "Email",
-      messageLabel: "Message",
-      submitLabel: "Send Message",
-      submittingLabel: "Sending...",
-      invalidMessage: "Please fill out all fields before sending your message.",
-      successMessage: "Thanks. Your message was sent successfully.",
-      errorMessage: "There was a problem sending your message. Please try again or email me directly.",
     },
     footer: "Built with React, TailwindCSS, and reusable UI components.",
   },
@@ -485,8 +471,7 @@ const translations = {
               "O acompanhamento de treino ficou mais consistente e orientado por dados, com feedback recorrente de performance. O bot está disponível como Gym Assist Bot (@GymAiMafissioniBot).",
           },
           tags: ["Node.js", "TypeScript", "Telegram Bot API", "PostgreSQL", "Railway", "ChatGPT API"],
-          githubUrl:
-            "https://github.com/search?q=user%3AFeMafissioni+gym+assist+bot&type=repositories",
+          githubUrl: "https://github.com/FeMafissioni/gym-ai-assistant",
         },
         {
           slug: "market-price-platform",
@@ -639,17 +624,9 @@ const translations = {
       eyebrow: "Contato",
       title: "Vamos nos conectar",
       subtitle:
-        "Aberto a oportunidades em engenharia de software, colaboração e discussões técnicas. Mande uma mensagem :)",
+        "Aberto a oportunidades em engenharia de software, colaboração e discussões técnicas.",
       intro:
         "Se seu time procura um Software Engineer com experiência prática em full-stack e QA, posso contribuir com foco em qualidade e entrega de valor.",
-      nameLabel: "Nome",
-      emailLabel: "Email",
-      messageLabel: "Mensagem",
-      submitLabel: "Enviar Mensagem",
-      submittingLabel: "Enviando...",
-      invalidMessage: "Por favor, preencha todos os campos antes de enviar sua mensagem.",
-      successMessage: "Obrigado. Sua mensagem foi enviada com sucesso.",
-      errorMessage: "Houve um problema ao enviar sua mensagem. Tente novamente ou me envie um email direto.",
     },
     footer: "Construído com React, TailwindCSS e componentes de UI reutilizáveis.",
   },
@@ -886,8 +863,6 @@ function App() {
   const [projectSlug, setProjectSlug] = useState(getInitialProjectSlug);
   const [videoLoadError, setVideoLoadError] = useState(false);
   const [activeSection, setActiveSection] = useState("about");
-  const [formMessage, setFormMessage] = useState("");
-  const [formStatus, setFormStatus] = useState("idle");
 
   const currentYear = useMemo(() => new Date().getFullYear(), []);
   const t = translations[language];
@@ -903,8 +878,6 @@ function App() {
   useEffect(() => {
     window.localStorage.setItem("portfolio-language", language);
     document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
-    setFormMessage("");
-    setFormStatus("idle");
   }, [language]);
 
   useEffect(() => {
@@ -953,54 +926,6 @@ function App() {
 
   const toggleLanguage = () => {
     setLanguage((current) => (current === "en" ? "pt" : "en"));
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-
-    if (!form.checkValidity()) {
-      setFormStatus("error");
-      setFormMessage(t.contact.invalidMessage);
-      return;
-    }
-
-    const formData = new FormData(form);
-
-    if (formData.get("_honey")) {
-      form.reset();
-      setFormStatus("success");
-      setFormMessage(t.contact.successMessage);
-      return;
-    }
-
-    formData.append("_subject", "New portfolio contact message");
-    formData.append("_replyto", String(formData.get("email") ?? ""));
-    formData.append("_template", "table");
-
-    setFormStatus("submitting");
-    setFormMessage("");
-
-    try {
-      const response = await fetch(contactFormEndpoint, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-        },
-        body: formData,
-      });
-
-      if (!response.ok) {
-        throw new Error("Contact form request failed");
-      }
-
-      setFormStatus("success");
-      setFormMessage(t.contact.successMessage);
-      form.reset();
-    } catch {
-      setFormStatus("error");
-      setFormMessage(t.contact.errorMessage);
-    }
   };
 
   return (
@@ -1625,7 +1550,7 @@ function App() {
             <section id="contact" className="mx-auto w-[min(1120px,92%)] py-14">
               <SectionHeader title={t.contact.title} subtitle={t.contact.subtitle} />
 
-              <div className="grid gap-4 lg:grid-cols-2">
+              <div className="max-w-[720px]">
                 <Card className="space-y-4">
                   <CardDescription>{t.contact.intro}</CardDescription>
 
@@ -1649,60 +1574,7 @@ function App() {
                     >
                       <Github size={18} aria-hidden="true" /> github.com/FeMafissioni
                     </a>
-                    <p className="flex items-center gap-2">
-                      <MapPin size={18} aria-hidden="true" /> Dublin, Ireland
-                    </p>
                   </div>
-                </Card>
-
-                <Card as="div">
-                  <form className="space-y-4" onSubmit={handleSubmit} noValidate>
-                    <div className="hidden" aria-hidden="true">
-                      <label htmlFor="_honey">Do not fill this field</label>
-                      <input id="_honey" name="_honey" type="text" tabIndex="-1" autoComplete="off" />
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <label className="text-sm font-semibold text-[#D4D4D8]" htmlFor="name">
-                        {t.contact.nameLabel}
-                      </label>
-                      <Input id="name" name="name" autoComplete="name" required />
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <label className="text-sm font-semibold text-[#D4D4D8]" htmlFor="email">
-                        {t.contact.emailLabel}
-                      </label>
-                      <Input id="email" name="email" type="email" autoComplete="email" required />
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <label className="text-sm font-semibold text-[#D4D4D8]" htmlFor="message">
-                        {t.contact.messageLabel}
-                      </label>
-                      <Textarea id="message" name="message" required />
-                    </div>
-
-                    <Button type="submit" className="w-full sm:w-auto" disabled={formStatus === "submitting"}>
-                      {formStatus === "submitting" ? t.contact.submittingLabel : t.contact.submitLabel}
-                    </Button>
-
-                    <p
-                      className={`min-h-6 text-sm font-semibold ${
-                        formStatus === "error"
-                          ? "text-[#F59E0B]"
-                          : formStatus === "success"
-                            ? "text-[#34D399]"
-                            : formStatus === "submitting"
-                              ? "text-[#A1A1AA]"
-                              : "text-[#A1A1AA]"
-                      }`}
-                      role="status"
-                      aria-live="polite"
-                    >
-                      {formMessage}
-                    </p>
-                  </form>
                 </Card>
               </div>
             </section>
