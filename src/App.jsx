@@ -55,7 +55,7 @@ const resumeFiles = {
   },
 };
 
-const contactFormEndpoint = "https://formsubmit.co/ajax/femafissioni@gmail.com";
+const contactFormEndpoint = "https://formsubmit.co/ajax/32b891c9c489b0852b0ac8e64ee96a6d";
 
 const marketPlatformGallery = {
   en: [
