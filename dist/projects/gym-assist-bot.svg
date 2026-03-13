@@ -1,0 +1,51 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="90" x2="1480" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1220" />
+      <stop offset="1" stop-color="#0A1018" />
+    </linearGradient>
+    <linearGradient id="accent" x1="260" y1="170" x2="1280" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE" />
+      <stop offset="1" stop-color="#34D399" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="#0A0F16" />
+  <rect x="90" y="70" width="1420" height="760" rx="36" fill="url(#bg)" stroke="#243041" stroke-width="2" />
+
+  <rect x="180" y="170" width="260" height="260" rx="36" fill="#0F1A2A" stroke="#2A3950" stroke-width="2" />
+  <rect x="230" y="230" width="160" height="105" rx="18" fill="#0B1624" stroke="#2A3950" stroke-width="2" />
+  <path d="M262 336L246 358L275 340" fill="#0B1624" stroke="#2A3950" stroke-width="2" stroke-linejoin="round" />
+  <rect x="258" y="260" width="104" height="12" rx="6" fill="#2A3950" />
+  <rect x="258" y="284" width="66" height="10" rx="5" fill="#2A3950" />
+
+  <rect x="510" y="190" width="900" height="220" rx="28" fill="#0E1622" stroke="#2A3950" stroke-width="2" />
+  <text x="566" y="282" fill="#E5E7EB" font-family="Manrope, Arial, sans-serif" font-size="72" font-weight="700">
+    Gym Assist Bot
+  </text>
+  <text x="566" y="340" fill="#94A3B8" font-family="Manrope, Arial, sans-serif" font-size="34" font-weight="500">
+    Telegram + AI workout tracker
+  </text>
+
+  <rect x="510" y="450" width="900" height="220" rx="28" fill="#0E1622" stroke="#2A3950" stroke-width="2" />
+  <text x="566" y="520" fill="#34D399" font-family="Manrope, Arial, sans-serif" font-size="26" font-weight="700">
+    LOG WEIGHTS AND REPS
+  </text>
+  <text x="566" y="566" fill="#CBD5E1" font-family="Manrope, Arial, sans-serif" font-size="30" font-weight="500">
+    Session and weekly progress insights
+  </text>
+
+  <rect x="566" y="600" width="206" height="44" rx="12" fill="#101B2A" stroke="#2A3950" />
+  <text x="618" y="629" fill="#22C55E" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="700">Node.js</text>
+
+  <rect x="792" y="600" width="198" height="44" rx="12" fill="#101B2A" stroke="#2A3950" />
+  <text x="838" y="629" fill="#3B82F6" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="700">TypeScript</text>
+
+  <rect x="1010" y="600" width="255" height="44" rx="12" fill="#101B2A" stroke="#2A3950" />
+  <text x="1062" y="629" fill="#38BDF8" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="700">Telegram API</text>
+
+  <rect x="180" y="465" width="260" height="205" rx="24" fill="#0F1A2A" stroke="#2A3950" stroke-width="2" />
+  <path d="M245 561H375" stroke="url(#accent)" stroke-width="18" stroke-linecap="round" />
+  <path d="M225 522V600" stroke="#2A3950" stroke-width="16" stroke-linecap="round" />
+  <path d="M395 522V600" stroke="#2A3950" stroke-width="16" stroke-linecap="round" />
+</svg>

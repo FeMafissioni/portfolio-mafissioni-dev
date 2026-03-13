@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Recipe ML preview</title>
+  <desc id="desc">Preview image for recipe recommendation model project</desc>
+  <rect width="1200" height="760" fill="#11161d" />
+  <rect x="40" y="40" width="1120" height="680" rx="10" fill="#171b22" stroke="#2a2f38" stroke-width="2" />
+
+  <rect x="100" y="120" width="430" height="470" rx="8" fill="#0f1115" stroke="#2a2f38" />
+  <polyline points="150,500 220,440 300,460 390,360 480,310" fill="none" stroke="#34d399" stroke-width="8" />
+  <circle cx="150" cy="500" r="7" fill="#34d399" />
+  <circle cx="220" cy="440" r="7" fill="#34d399" />
+  <circle cx="300" cy="460" r="7" fill="#34d399" />
+  <circle cx="390" cy="360" r="7" fill="#34d399" />
+  <circle cx="480" cy="310" r="7" fill="#34d399" />
+
+  <rect x="590" y="120" width="510" height="150" rx="8" fill="#0f1115" stroke="#2a2f38" />
+  <rect x="620" y="160" width="450" height="22" rx="5" fill="#252b34" />
+  <rect x="620" y="196" width="320" height="18" rx="5" fill="#252b34" />
+
+  <rect x="590" y="300" width="510" height="290" rx="8" fill="#0f1115" stroke="#2a2f38" />
+  <rect x="620" y="336" width="145" height="210" rx="8" fill="#171b22" />
+  <rect x="772" y="336" width="145" height="210" rx="8" fill="#171b22" />
+  <rect x="924" y="336" width="145" height="210" rx="8" fill="#171b22" />
+  <rect x="640" y="520" width="105" height="10" rx="4" fill="#34d399" />
+  <rect x="792" y="520" width="105" height="10" rx="4" fill="#34d399" />
+  <rect x="944" y="520" width="105" height="10" rx="4" fill="#34d399" />
+
+  <text x="100" y="660" font-size="34" font-family="Manrope, sans-serif" fill="#e5e7eb">
+    Recipe recommendation model
+  </text>
+</svg>

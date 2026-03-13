@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Market platform preview</title>
+  <desc id="desc">Preview image for market comparison platform project</desc>
+  <rect width="1200" height="760" fill="#11161d" />
+  <rect x="40" y="40" width="1120" height="680" rx="10" fill="#171b22" stroke="#2a2f38" stroke-width="2" />
+
+  <rect x="100" y="110" width="700" height="500" rx="8" fill="#0f1115" stroke="#2a2f38" />
+  <rect x="128" y="140" width="644" height="36" rx="4" fill="#171b22" />
+  <rect x="128" y="200" width="300" height="22" rx="4" fill="#252b34" />
+  <rect x="448" y="200" width="324" height="22" rx="4" fill="#252b34" />
+  <rect x="128" y="244" width="644" height="84" rx="6" fill="#171b22" />
+  <rect x="128" y="348" width="644" height="84" rx="6" fill="#171b22" />
+  <rect x="128" y="452" width="644" height="84" rx="6" fill="#171b22" />
+
+  <rect x="860" y="150" width="250" height="430" rx="26" fill="#0f1115" stroke="#2a2f38" />
+  <rect x="890" y="200" width="190" height="26" rx="6" fill="#252b34" />
+  <rect x="890" y="244" width="190" height="26" rx="6" fill="#252b34" />
+  <rect x="890" y="288" width="190" height="26" rx="6" fill="#252b34" />
+  <rect x="890" y="344" width="190" height="170" rx="8" fill="#171b22" />
+  <rect x="910" y="374" width="150" height="16" rx="4" fill="#34d399" />
+  <rect x="910" y="402" width="112" height="16" rx="4" fill="#2a2f38" />
+  <rect x="910" y="430" width="138" height="16" rx="4" fill="#2a2f38" />
+
+  <text x="100" y="660" font-size="34" font-family="Manrope, sans-serif" fill="#e5e7eb">
+    Market comparison platform
+  </text>
+</svg>

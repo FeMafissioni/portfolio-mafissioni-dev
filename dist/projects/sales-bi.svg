@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Sales dashboard preview</title>
+  <desc id="desc">Preview image for sales and KPI dashboard project</desc>
+  <rect width="1200" height="760" fill="#11161d" />
+  <rect x="40" y="40" width="1120" height="680" rx="10" fill="#171b22" stroke="#2a2f38" stroke-width="2" />
+
+  <rect x="100" y="120" width="1000" height="120" rx="8" fill="#0f1115" stroke="#2a2f38" />
+  <rect x="132" y="156" width="290" height="48" rx="8" fill="#171b22" />
+  <rect x="455" y="156" width="290" height="48" rx="8" fill="#171b22" />
+  <rect x="778" y="156" width="290" height="48" rx="8" fill="#171b22" />
+
+  <rect x="100" y="276" width="640" height="320" rx="8" fill="#0f1115" stroke="#2a2f38" />
+  <rect x="140" y="536" width="46" height="32" rx="4" fill="#34d399" />
+  <rect x="202" y="510" width="46" height="58" rx="4" fill="#34d399" />
+  <rect x="264" y="478" width="46" height="90" rx="4" fill="#34d399" />
+  <rect x="326" y="446" width="46" height="122" rx="4" fill="#34d399" />
+  <rect x="388" y="420" width="46" height="148" rx="4" fill="#34d399" />
+  <rect x="450" y="470" width="46" height="98" rx="4" fill="#34d399" />
+  <rect x="512" y="430" width="46" height="138" rx="4" fill="#34d399" />
+  <rect x="574" y="392" width="46" height="176" rx="4" fill="#34d399" />
+  <rect x="636" y="450" width="46" height="118" rx="4" fill="#34d399" />
+
+  <rect x="780" y="276" width="320" height="320" rx="8" fill="#0f1115" stroke="#2a2f38" />
+  <rect x="810" y="320" width="260" height="22" rx="5" fill="#252b34" />
+  <rect x="810" y="358" width="260" height="22" rx="5" fill="#252b34" />
+  <rect x="810" y="396" width="210" height="22" rx="5" fill="#252b34" />
+  <rect x="810" y="448" width="260" height="118" rx="8" fill="#171b22" />
+  <rect x="836" y="482" width="98" height="14" rx="5" fill="#34d399" />
+  <rect x="836" y="508" width="164" height="14" rx="5" fill="#2a2f38" />
+  <rect x="836" y="534" width="136" height="14" rx="5" fill="#2a2f38" />
+
+  <text x="100" y="660" font-size="34" font-family="Manrope, sans-serif" fill="#e5e7eb">
+    Sales monitoring dashboard
+  </text>
+</svg>
