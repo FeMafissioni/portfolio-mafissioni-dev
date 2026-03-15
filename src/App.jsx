@@ -243,7 +243,7 @@ const translations = {
           },
           tags: ["React", "React Native", "NestJS", "PostgreSQL", "AWS", "Stripe"],
           githubUrl:
-            "https://github.com/search?q=user%3AFeMafissioni+market+price+comparison&type=repositories",
+            "https://github.com/FeMafissioni/tcc-mercado-front",
         },
         {
           slug: "sales-monitoring-dashboard",
@@ -497,7 +497,7 @@ const translations = {
           },
           tags: ["React", "React Native", "NestJS", "PostgreSQL", "AWS", "Stripe"],
           githubUrl:
-            "https://github.com/search?q=user%3AFeMafissioni+market+price+comparison&type=repositories",
+            "https://github.com/FeMafissioni/tcc-mercado-front",
         },
         {
           slug: "sales-monitoring-dashboard",
@@ -1257,6 +1257,22 @@ function App() {
                               );
                             })}
                           </div>
+
+                          {selectedProject.githubUrl && (
+                            <Button
+                              as="a"
+                              href={selectedProject.githubUrl}
+                              variant="secondary"
+                              size="sm"
+                              target="_blank"
+                              rel="noreferrer"
+                              aria-label={`${t.projects.repoCta}: ${selectedProject.title}`}
+                              className="w-full"
+                            >
+                              <Github size={16} aria-hidden="true" />
+                              {t.projects.repoCta}
+                            </Button>
+                          )}
                         </Card>
                       </aside>
                     </div>
