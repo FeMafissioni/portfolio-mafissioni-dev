@@ -40,6 +40,7 @@ import { GrOracle } from "react-icons/gr";
 import { Button } from "./components/ui/button";
 import { Card, CardDescription, CardTitle } from "./components/ui/card";
 import { Badge } from "./components/ui/badge";
+import { ProjectComparison } from "./components/project-comparison";
 import { SectionHeader } from "./components/ui/section-header";
 
 const resumeFiles = {
@@ -992,6 +993,7 @@ function App() {
   );
   const ActionIcon = projectAction?.Icon;
   const isMobileProjectMedia = selectedProject?.mediaLayout === "mobile";
+  const hasProjectComparison = Boolean(selectedProject?.comparisonSections?.length);
   const projectGallery = selectedProject?.gallery ?? [];
   const skipTarget = isProjectDetailView ? "#project-detail" : "#about";
 
@@ -1303,16 +1305,30 @@ function App() {
                             </video>
                           </div>
                         ) : (
-                          <ProjectCarousel
-                            items={projectGallery}
-                            fallbackSrc={selectedProject.cover}
-                            fallbackAlt={selectedProject.title}
-                            labels={{
-                              previous: t.projects.carouselPreviousAria,
-                              next: t.projects.carouselNextAria,
-                              goTo: t.projects.carouselGoToAria,
-                            }}
-                          />
+                          hasProjectComparison ? (
+                            <ProjectComparison
+                              sections={selectedProject.comparisonSections}
+                              fallbackSrc={selectedProject.cover}
+                              fallbackAlt={selectedProject.title}
+                              labels={{
+                                tablist: t.projects.comparisonTablistAria,
+                                slider: t.projects.comparisonSliderAria,
+                                old: t.projects.comparisonOldLabel,
+                                new: t.projects.comparisonNewLabel,
+                              }}
+                            />
+                          ) : (
+                            <ProjectCarousel
+                              items={projectGallery}
+                              fallbackSrc={selectedProject.cover}
+                              fallbackAlt={selectedProject.title}
+                              labels={{
+                                previous: t.projects.carouselPreviousAria,
+                                next: t.projects.carouselNextAria,
+                                goTo: t.projects.carouselGoToAria,
+                              }}
+                            />
+                          )
                         )}
 
                         <div className="space-y-3">
