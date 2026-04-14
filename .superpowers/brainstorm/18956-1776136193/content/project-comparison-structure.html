@@ -1,0 +1,389 @@
+<style>
+  .eyebrow {
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    color: #7dd3a8;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .lede {
+    max-width: 78ch;
+    color: #b8c0cc;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .stack {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .project-row {
+    display: grid;
+    gap: 1rem;
+    border: 1px solid rgba(125, 211, 168, 0.18);
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(20, 27, 36, 0.95), rgba(13, 18, 25, 0.95));
+    padding: 1.25rem;
+  }
+
+  .project-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .index-pill {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    color: #7b8797;
+    font-size: 0.82rem;
+    letter-spacing: 0.24em;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.86rem;
+    color: #9eacbc;
+  }
+
+  .meta span + span::before {
+    content: "•";
+    margin-right: 0.5rem;
+    color: #516071;
+  }
+
+  .project-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .project-copy {
+    color: #b8c0cc;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .badge-row {
+    display: flex;
+    gap: 0.55rem;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    border-radius: 999px;
+    border: 1px solid rgba(125, 211, 168, 0.18);
+    padding: 0.35rem 0.65rem;
+    font-size: 0.8rem;
+    color: #dde6ef;
+    background: rgba(21, 28, 36, 0.82);
+  }
+
+  .layout {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .panel {
+    border: 1px solid rgba(120, 131, 148, 0.18);
+    border-radius: 22px;
+    background: rgba(16, 22, 29, 0.92);
+    overflow: hidden;
+  }
+
+  .panel-header {
+    padding: 0.95rem 1rem;
+    border-bottom: 1px solid rgba(120, 131, 148, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .panel-header h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .tabs {
+    display: inline-flex;
+    gap: 0.5rem;
+    background: rgba(12, 17, 23, 0.85);
+    border: 1px solid rgba(120, 131, 148, 0.16);
+    border-radius: 999px;
+    padding: 0.25rem;
+  }
+
+  .tab {
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    color: #9eacbc;
+  }
+
+  .tab.active {
+    background: #7dd3a8;
+    color: #07110b;
+    font-weight: 700;
+  }
+
+  .comparison {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #0d131a;
+  }
+
+  .comparison-half {
+    position: absolute;
+    inset: 0;
+    padding: 1rem;
+  }
+
+  .comparison-half.old {
+    width: 47%;
+    border-right: 2px solid rgba(248, 113, 113, 0.75);
+    background:
+      linear-gradient(180deg, rgba(239, 68, 68, 0.18), rgba(239, 68, 68, 0.03)),
+      repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.03) 0 22px,
+        rgba(255, 255, 255, 0.05) 22px 44px
+      );
+  }
+
+  .comparison-half.new {
+    left: 47%;
+    background:
+      linear-gradient(180deg, rgba(52, 211, 153, 0.2), rgba(52, 211, 153, 0.03)),
+      radial-gradient(circle at top right, rgba(52, 211, 153, 0.12), transparent 45%);
+  }
+
+  .label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    border-radius: 999px;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .label.old {
+    color: #fecaca;
+    background: rgba(127, 29, 29, 0.55);
+  }
+
+  .label.new {
+    color: #bbf7d0;
+    background: rgba(6, 78, 59, 0.55);
+  }
+
+  .divider {
+    position: absolute;
+    inset: 0 auto 0 47%;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.82);
+  }
+
+  .handle {
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    width: 58px;
+    height: 58px;
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    background: rgba(9, 14, 20, 0.92);
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+  }
+
+  .wire {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .line {
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .line.short { width: 42%; }
+  .line.mid { width: 67%; }
+  .line.long { width: 86%; }
+
+  .sidebar-body {
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .side-card {
+    border-radius: 18px;
+    background: rgba(12, 17, 23, 0.76);
+    border: 1px solid rgba(120, 131, 148, 0.14);
+    padding: 1rem;
+  }
+
+  .side-card h4 {
+    margin: 0 0 0.6rem;
+    font-size: 0.9rem;
+    color: #7dd3a8;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .side-card ul {
+    margin: 0;
+    padding-left: 1rem;
+    color: #b8c0cc;
+    line-height: 1.6;
+  }
+
+  .note {
+    color: #8ea0b3;
+    font-size: 0.84rem;
+    margin-top: 0.75rem;
+  }
+
+  @media (max-width: 900px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<p class="eyebrow">Design Review · Section 1</p>
+<h2>Comparison-led Project Detail</h2>
+<p class="lede">
+  Proposed structure for the new third portfolio item. The list keeps a normal project card,
+  but the detail page becomes a redesign case study with before/after desktop comparisons for
+  <strong>Homepage</strong> and <strong>Services</strong>.
+</p>
+
+<div class="stack">
+  <section class="project-row">
+    <div class="project-top">
+      <div class="index-pill">03</div>
+      <div>
+        <div class="meta">
+          <span>Business Website Redesign</span>
+          <span>2026</span>
+        </div>
+        <p class="project-title">Local Company Website Redesign</p>
+      </div>
+    </div>
+
+    <p class="project-copy">
+      Website redesign for a local company focused on replacing outdated information, fixing the
+      mobile experience, clarifying navigation, and improving contact conversion with budget form
+      delivery and WhatsApp integration.
+    </p>
+
+    <div class="badge-row">
+      <span class="badge">React</span>
+      <span class="badge">TypeScript</span>
+      <span class="badge">Vite</span>
+      <span class="badge">Tailwind CSS</span>
+      <span class="badge">Responsive Design</span>
+    </div>
+  </section>
+
+  <section class="layout">
+    <div class="panel">
+      <div class="panel-header">
+        <h3>Project detail media area</h3>
+        <div class="tabs">
+          <span class="tab active">Homepage</span>
+          <span class="tab">Services</span>
+        </div>
+      </div>
+
+      <div class="comparison">
+        <div class="comparison-half old">
+          <span class="label old">Old website</span>
+          <div class="wire">
+            <div class="line short"></div>
+            <div class="line long"></div>
+            <div class="line mid"></div>
+            <div class="line long"></div>
+            <div class="line mid"></div>
+          </div>
+        </div>
+
+        <div class="comparison-half new">
+          <span class="label new">New website</span>
+          <div class="wire" style="margin-left: 18%;">
+            <div class="line short"></div>
+            <div class="line long"></div>
+            <div class="line long"></div>
+            <div class="line mid"></div>
+            <div class="line short"></div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="handle">↔</div>
+      </div>
+
+      <div style="padding: 1rem 1rem 1.1rem;">
+        <p class="note">
+          Interaction proposal: static screenshot pairs with a draggable divider. Tabs switch
+          between <strong>Homepage</strong> and <strong>Services</strong>.
+        </p>
+      </div>
+    </div>
+
+    <aside class="panel">
+      <div class="panel-header">
+        <h3>Supporting story blocks</h3>
+      </div>
+
+      <div class="sidebar-body">
+        <div class="side-card">
+          <h4>Context</h4>
+          <ul>
+            <li>Outdated visual identity and information</li>
+            <li>Poor mobile experience</li>
+            <li>Confusing navigation</li>
+            <li>Weak contact flow</li>
+          </ul>
+        </div>
+
+        <div class="side-card">
+          <h4>Execution</h4>
+          <ul>
+            <li>Rebuilt with React, TypeScript, Vite, and Tailwind</li>
+            <li>Responsive layout for desktop and mobile behavior</li>
+            <li>Email budget form and WhatsApp contact integration</li>
+          </ul>
+        </div>
+
+        <div class="side-card">
+          <h4>Outcome</h4>
+          <ul>
+            <li>Modernized company presentation</li>
+            <li>Clearer information architecture</li>
+            <li>Stronger direct-contact path for leads</li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </section>
+</div>
