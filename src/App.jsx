@@ -10,6 +10,7 @@ import {
   Code,
   Download,
   Github,
+  Globe,
   Languages,
   Linkedin,
   Mail,
@@ -175,6 +176,7 @@ const translations = {
       subtitle:
         "Projects focused on solving real user and business problems with modern technologies.",
       repoCta: "View Repository",
+      websiteCta: "Visit website",
       openCta: "Open project",
       backCta: "Back to projects",
       detailTitle: "Project overview",
@@ -183,6 +185,10 @@ const translations = {
       carouselPreviousAria: "Show previous project image",
       carouselNextAria: "Show next project image",
       carouselGoToAria: "Show project image",
+      comparisonTablistAria: "Choose project comparison view",
+      comparisonSliderAria: "Reveal more or less of the old website",
+      comparisonOldLabel: "Old website",
+      comparisonNewLabel: "New website",
       notFoundTitle: "Project not found",
       notFoundSubtitle: "The selected project is unavailable. Go back to the projects list.",
       detailLabels: {
@@ -244,6 +250,48 @@ const translations = {
           tags: ["React", "React Native", "NestJS", "PostgreSQL", "AWS", "Stripe"],
           githubUrl:
             "https://github.com/FeMafissioni/tcc-mercado-front",
+        },
+        {
+          slug: "local-company-website-redesign",
+          title: "Local Company Website Redesign",
+          description:
+            "Redesign of a local company website to modernize branding, update outdated information, improve responsiveness, and strengthen customer contact flows.",
+          period: "2026",
+          kind: "Business Website Redesign",
+          cover: "/projects/stampnow-home-new.png",
+          highlights: [
+            "Modernized the visual presentation and content structure.",
+            "Improved desktop and mobile responsiveness.",
+            "Streamlined contact through budget form email delivery and WhatsApp integration.",
+          ],
+          details: {
+            context:
+              "The previous site had outdated visuals and information, weak mobile usability, confusing navigation, and an ineffective contact path.",
+            execution:
+              "The website was rebuilt with React, TypeScript, Vite, and Tailwind, with updated structure, improved responsiveness, and direct contact flows for budget requests and WhatsApp.",
+            outcome:
+              "The company now has a clearer and more modern website with better service presentation and a stronger lead/contact flow.",
+          },
+          tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Responsive Design"],
+          websiteUrl: "https://www.stampnow.com.br",
+          comparisonSections: [
+            {
+              id: "homepage",
+              label: "Homepage",
+              oldSrc: "/projects/stampnow-home-old.png",
+              oldAlt: "Stamp Now homepage before the redesign",
+              newSrc: "/projects/stampnow-home-new.png",
+              newAlt: "Stamp Now homepage after the redesign",
+            },
+            {
+              id: "services",
+              label: "Services",
+              oldSrc: "/projects/stampnow-services-old.png",
+              oldAlt: "Stamp Now services page before the redesign",
+              newSrc: "/projects/stampnow-services-new.png",
+              newAlt: "Stamp Now services page after the redesign",
+            },
+          ],
         },
         {
           slug: "sales-monitoring-dashboard",
@@ -317,7 +365,7 @@ const translations = {
         {
           title: "Azure Pipelines - CI/CD, Docker and Kubernetes in Azure DevOps",
           institution: "Azure DevOps",
-          period: "Current",
+          period: "2026",
         },
       ]
     },
@@ -428,6 +476,7 @@ const translations = {
       subtitle:
         "Projetos focados em resolver problemas reais de usuários e negócio com tecnologias modernas.",
       repoCta: "Ver Repositório",
+      websiteCta: "Ver site",
       openCta: "Abrir projeto",
       backCta: "Voltar para projetos",
       detailTitle: "Visão geral do projeto",
@@ -436,6 +485,10 @@ const translations = {
       carouselPreviousAria: "Mostrar imagem anterior do projeto",
       carouselNextAria: "Mostrar próxima imagem do projeto",
       carouselGoToAria: "Mostrar imagem do projeto",
+      comparisonTablistAria: "Escolher visualização da comparação do projeto",
+      comparisonSliderAria: "Revelar mais ou menos do site antigo",
+      comparisonOldLabel: "Site antigo",
+      comparisonNewLabel: "Site novo",
       notFoundTitle: "Projeto não encontrado",
       notFoundSubtitle:
         "O projeto selecionado não está disponível no momento. Volte para a lista de projetos.",
@@ -498,6 +551,48 @@ const translations = {
           tags: ["React", "React Native", "NestJS", "PostgreSQL", "AWS", "Stripe"],
           githubUrl:
             "https://github.com/FeMafissioni/tcc-mercado-front",
+        },
+        {
+          slug: "local-company-website-redesign",
+          title: "Redesign de Website para Empresa Local",
+          description:
+            "Redesign de um website empresarial local para modernizar a marca, atualizar informações desatualizadas, melhorar a responsividade e fortalecer os canais de contato com clientes.",
+          period: "2026",
+          kind: "Redesign de Website Empresarial",
+          cover: "/projects/stampnow-home-new.png",
+          highlights: [
+            "Modernização da apresentação visual e da organização do conteúdo.",
+            "Melhoria da experiência responsiva em desktop e mobile.",
+            "Simplificação do contato com envio de orçamento por email e integração com WhatsApp.",
+          ],
+          details: {
+            context:
+              "O site anterior apresentava visual e informações desatualizadas, baixa usabilidade em dispositivos móveis, navegação confusa e um fluxo de contato pouco eficiente.",
+            execution:
+              "O website foi reconstruído com React, TypeScript, Vite e Tailwind, com reorganização da estrutura de páginas, melhoria de responsividade e implementação de fluxos diretos de contato para orçamento e WhatsApp.",
+            outcome:
+              "A empresa passou a ter um site mais claro e atual, com melhor apresentação dos serviços e um fluxo de contato mais direto para geração de leads.",
+          },
+          tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Responsive Design"],
+          websiteUrl: "https://www.stampnow.com.br",
+          comparisonSections: [
+            {
+              id: "homepage",
+              label: "Página inicial",
+              oldSrc: "/projects/stampnow-home-old.png",
+              oldAlt: "Página inicial da Stamp Now antes do redesign",
+              newSrc: "/projects/stampnow-home-new.png",
+              newAlt: "Página inicial da Stamp Now após o redesign",
+            },
+            {
+              id: "services",
+              label: "Serviços",
+              oldSrc: "/projects/stampnow-services-old.png",
+              oldAlt: "Página de serviços da Stamp Now antes do redesign",
+              newSrc: "/projects/stampnow-services-new.png",
+              newAlt: "Página de serviços da Stamp Now após o redesign",
+            },
+          ],
         },
         {
           slug: "sales-monitoring-dashboard",
@@ -571,7 +666,7 @@ const translations = {
         {
           title: "Azure Pipelines - CI/CD, Docker e Kubernetes no Azure DevOps",
           institution: "Azure DevOps",
-          period: "Em andamento",
+          period: "2026",
         },
       ]
     },
@@ -664,6 +759,26 @@ function getInitialProjectSlug() {
   }
 
   return getProjectSlugFromHash(window.location.hash);
+}
+
+function getProjectAction(project, labels) {
+  if (project?.websiteUrl) {
+    return {
+      href: project.websiteUrl,
+      label: labels.websiteCta,
+      Icon: Globe,
+    };
+  }
+
+  if (project?.githubUrl) {
+    return {
+      href: project.githubUrl,
+      label: labels.repoCta,
+      Icon: Github,
+    };
+  }
+
+  return null;
 }
 
 function ProjectCarousel({ items, fallbackSrc, fallbackAlt, labels }) {
@@ -871,6 +986,11 @@ function App() {
     () => t.projects.items.find((project) => project.slug === projectSlug),
     [projectSlug, t.projects.items]
   );
+  const projectAction = useMemo(
+    () => getProjectAction(selectedProject, t.projects),
+    [selectedProject, t.projects]
+  );
+  const ActionIcon = projectAction?.Icon;
   const isMobileProjectMedia = selectedProject?.mediaLayout === "mobile";
   const projectGallery = selectedProject?.gallery ?? [];
   const skipTarget = isProjectDetailView ? "#project-detail" : "#about";
@@ -1106,19 +1226,19 @@ function App() {
                               })}
                             </div>
 
-                            {selectedProject.githubUrl && (
+                            {projectAction && ActionIcon && (
                               <Button
                                 as="a"
-                                href={selectedProject.githubUrl}
+                                href={projectAction.href}
                                 variant="secondary"
                                 size="sm"
                                 target="_blank"
                                 rel="noreferrer"
-                                aria-label={`${t.projects.repoCta}: ${selectedProject.title}`}
+                                aria-label={`${projectAction.label}: ${selectedProject.title}`}
                                 className="w-full"
                               >
-                                <Github size={16} aria-hidden="true" />
-                                {t.projects.repoCta}
+                                <ActionIcon size={16} aria-hidden="true" />
+                                {projectAction.label}
                               </Button>
                             )}
                           </Card>
@@ -1258,19 +1378,19 @@ function App() {
                             })}
                           </div>
 
-                          {selectedProject.githubUrl && (
+                          {projectAction && ActionIcon && (
                             <Button
                               as="a"
-                              href={selectedProject.githubUrl}
+                              href={projectAction.href}
                               variant="secondary"
                               size="sm"
                               target="_blank"
                               rel="noreferrer"
-                              aria-label={`${t.projects.repoCta}: ${selectedProject.title}`}
+                              aria-label={`${projectAction.label}: ${selectedProject.title}`}
                               className="w-full"
                             >
-                              <Github size={16} aria-hidden="true" />
-                              {t.projects.repoCta}
+                              <ActionIcon size={16} aria-hidden="true" />
+                              {projectAction.label}
                             </Button>
                           )}
                         </Card>
