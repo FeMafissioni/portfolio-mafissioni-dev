@@ -274,7 +274,8 @@ const translations = {
               "The company now has a clearer and more modern website with better service presentation and a stronger lead/contact flow.",
           },
           tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Responsive Design"],
-          websiteUrl: "https://www.stampnow.com.br",
+          websiteUrl: "https://stamp-now.netlify.app",
+          //websiteUrl: "https://www.stampnow.com.br",
           comparisonSections: [
             {
               id: "homepage",
